@@ -14,9 +14,13 @@
 		86F8298828BDF25E003D958F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F8298728BDF25E003D958F /* Assets.xcassets */; };
 		86F8298B28BDF25E003D958F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F8298928BDF25E003D958F /* LaunchScreen.storyboard */; };
 		86F8298E28BDF25E003D958F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F8298D28BDF25E003D958F /* main.m */; };
+		D57696D8519800AF9AD4B3EB /* libPods-JSPatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146AD4BA1A1317BA747927E6 /* libPods-JSPatch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146AD4BA1A1317BA747927E6 /* libPods-JSPatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSPatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		382E2DE8636CD573D2A33F8C /* Pods-JSPatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSPatch.release.xcconfig"; path = "Target Support Files/Pods-JSPatch/Pods-JSPatch.release.xcconfig"; sourceTree = "<group>"; };
+		46C08F32F7B2A01895DB6290 /* Pods-JSPatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSPatch.debug.xcconfig"; path = "Target Support Files/Pods-JSPatch/Pods-JSPatch.debug.xcconfig"; sourceTree = "<group>"; };
 		86F8297828BDF258003D958F /* JSPatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSPatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F8297B28BDF258003D958F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86F8297C28BDF258003D958F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57696D8519800AF9AD4B3EB /* libPods-JSPatch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				86F8297A28BDF258003D958F /* JSPatch */,
 				86F8297928BDF258003D958F /* Products */,
+				F200987CD76A2470A7AC342A /* Pods */,
+				E2BD57F4C7A00EFCC7F7B860 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,24 @@
 			path = JSPatch;
 			sourceTree = "<group>";
 		};
+		E2BD57F4C7A00EFCC7F7B860 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				146AD4BA1A1317BA747927E6 /* libPods-JSPatch.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F200987CD76A2470A7AC342A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46C08F32F7B2A01895DB6290 /* Pods-JSPatch.debug.xcconfig */,
+				382E2DE8636CD573D2A33F8C /* Pods-JSPatch.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86F8299128BDF25E003D958F /* Build configuration list for PBXNativeTarget "JSPatch" */;
 			buildPhases = (
+				5792C3BFF6BA211EDB3F1C5F /* [CP] Check Pods Manifest.lock */,
 				86F8297428BDF258003D958F /* Sources */,
 				86F8297528BDF258003D958F /* Frameworks */,
 				86F8297628BDF258003D958F /* Resources */,
+				7859607BE0CD1E771E5E9C8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5792C3BFF6BA211EDB3F1C5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSPatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7859607BE0CD1E771E5E9C8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSPatch/Pods-JSPatch-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSPatch/Pods-JSPatch-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSPatch/Pods-JSPatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86F8297428BDF258003D958F /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		86F8299228BDF25E003D958F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C08F32F7B2A01895DB6290 /* Pods-JSPatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +383,7 @@
 		};
 		86F8299328BDF25E003D958F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 382E2DE8636CD573D2A33F8C /* Pods-JSPatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
