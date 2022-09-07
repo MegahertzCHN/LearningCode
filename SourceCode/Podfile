@@ -1,0 +1,16 @@
+target "SourceCode" do
+
+platform :ios, "9.0"
+# Json转化为Model
+pod 'JSONModel'
+# 热修复技术 类似的还有Bugly
+pod 'JSPatch'
+# Crash崩溃追踪技术
+pod 'KSCrash'
+# 网络请求
+pod 'AFNetworking'
+# 约束
+pod 'Masonry'
+
+
+end

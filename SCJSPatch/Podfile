@@ -1,8 +1,0 @@
-
-target 'SCJSPatch' do
-
-platform :ios, "9.0"
-
-pod 'JSPatch'
-
-end
